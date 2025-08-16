@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #8b5cf6 #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b5cf6, #a855f7);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #9333ea);
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth animations */
+/* Removed global transition that was causing unwanted page load animations */
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Removed fade in animation to prevent unwanted page load effects */
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@layer base {
+  :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 3.9%;
+        --primary: 0 0% 9%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 9%;
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 0 0% 3.9%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+    }
+  .dark {
+        --background: 0 0% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 0 0% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 0 0% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 9%;
+        --secondary: 0 0% 14.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 14.9%;
+        --input: 0 0% 14.9%;
+        --ring: 0 0% 83.1%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500; /* Medium weight */
+    }
+}
+
+/* Custom very light gray background - same as dark theme */
+.bg-gray-25 {
+  background-color: #f9fafa; /* Same as dark theme section background */
+}
+
+/* Custom dark header background */
+.bg-dark-header {
+  background-color: #192236; /* Dark blue-gray header for dark theme */
+}
+
+/* Custom colorful theme header background */
+.bg-colorful-header {
+  background-color: #f6bf04; /* Yellow header for colorful theme */
+}
+
+/* Custom colorful theme header border */
+.border-colorful-header {
+  border-color: #f6bf04; /* Yellow border matching header for colorful theme */
+}
+
+/* Custom red theme header background */
+.bg-red-header {
+  background-color: #ff4e51; /* Red header for red theme */
+}
+
+/* Custom red theme header border */
+.border-red-header {
+  border-color: #ff4e51; /* Red border matching header for red theme */
+}
+
+/* Custom red theme section background */
+.bg-red-section {
+  background-color: #f9fafa; /* Same background as other themes */
+}
+
+/* Custom blue theme header background */
+.bg-blue-header {
+  background-color: #0d7ebb; /* Updated blue header for blue theme */
+}
+
+/* Custom blue theme header border */
+.border-blue-header {
+  border-color: #0d7ebb; /* Updated blue border matching header for blue theme */
+}
+
+/* Custom blue theme unselected tab background */
+.bg-blue-unselected {
+  background-color: #0f8ed3; /* Custom blue for unselected tabs */
+}
+
+/* Custom blue theme unselected tab hover background */
+.hover\:bg-blue-unselected-hover:hover {
+  background-color: #0d8dbb; /* Custom blue hover color for unselected tabs */
+}
+
+/* Custom red theme unselected tab background */
+.bg-red-unselected {
+  background-color: #ff694e; /* Custom red for unselected tabs */
+}
+
+/* Custom dark theme unselected tab background */
+.bg-dark-unselected {
+  background-color: #3b4d68; /* Custom dark blue for unselected tabs */
+}
+
+/* Custom blue theme section background */
+.bg-blue-section {
+  background-color: #f9fafa; /* Same background as other themes */
+}
+
+/* Poppins font utility */
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-poppins-medium {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+/* Custom colorful theme section background */
+.bg-colorful-section {
+  background-color: #f9fafa; /* Same as dark theme section background */
+}
+
+/* Custom max-width for wider layout to accommodate longer translations */
+.max-w-5xl-plus {
+  max-width: 75rem; /* 75rem = 1200px - optimized width to accommodate Malayalam language */
+}
+
+/* Custom dark theme section background */
+.bg-dark-section {
+  background-color: #f9fafa; /* Very light gray for dark theme sections */
+}
+
+/* Custom light divider for dark theme */
+.border-dark-divider {
+  border-color: #e5e5e5; /* 75% lighter divider for dark theme */
+}
+
+/* Custom border color matching dark section background */
+.border-dark-section {
+  border-color: #e1e1e1; /* Darker border so it's visible against #f9fafa background */
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tadka App - Complete Session Code Download</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        .download-info {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .file-tree {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+        .action-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 0 10px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .btn-secondary {
+            background: #95a5a6;
+        }
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+        .file-section {
+            margin-bottom: 40px;
+        }
+        .file-header {
+            background: #34495e;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px 6px 0 0;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+        }
+        .file-content {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            overflow-x: auto;
+        }
+        .file-content pre {
+            margin: 0;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+        }
+        .copy-btn {
+            float: right;
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .copy-btn:hover {
+            background: #229954;
+        }
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .instructions h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        .toc {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .toc h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            padding: 5px 0;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #3498db;
+            font-family: 'Courier New', monospace;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 Tadka News Platform - Complete Code Export</h1>
+            <p>Generated on: <span id="currentDate"></span></p>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Download Instructions</h3>
+            <ol>
+                <li><strong>Save this page:</strong> Right-click → "Save As" → Choose "Webpage, Complete" to save with all files</li>
+                <li><strong>Copy individual files:</strong> Use the copy buttons next to each file to copy code directly</li>
+                <li><strong>Create project structure:</strong> Follow the file tree structure shown below</li>
+                <li><strong>Upload to GitHub:</strong> Create a new repository and upload these files</li>
+            </ol>
+        </div>
+
+        <div class="download-info">
+            <h3>📊 Project Overview</h3>
+            <p><strong>Project:</strong> Tadka - Indian News & Entertainment Platform</p>
+            <p><strong>Technology Stack:</strong> FastAPI (Backend) + React 19 (Frontend) + SQLite Database</p>
+            <p><strong>Export Date:</strong> <span id="exportDate"></span></p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalFiles">0</div>
+                <div>Total Files</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="pythonFiles">0</div>
+                <div>Python Files</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="jsFiles">0</div>
+                <div>JS/JSX Files</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalLines">0</div>
+                <div>Total Lines</div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn" onclick="downloadAllAsZip()">📦 Download Project Structure</button>  
+            <button class="btn btn-secondary" onclick="copyProjectInfo()">📋 Copy Project Info</button>
+        </div>
+
+        <div class="toc">
+            <h3>📁 File Structure & Quick Navigation</h3>
+            <div class="file-tree" id="fileTree">Loading file structure...</div>
+        </div>
+
+        <div id="fileContents">
+            <!-- File contents will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleString();
+        document.getElementById('exportDate').textContent = new Date().toLocaleString();
+
+        // File data will be populated by the backend
+        const projectFiles = [];
+        let totalLines = 0;
+        let pythonCount = 0;
+        let jsCount = 0;
+
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(function() {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#27ae60';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#27ae60';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    button.textContent = 'Copied!';
+                } catch (err) {
+                    console.error('Fallback copy failed: ', err);
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+
+        function downloadAllAsZip() {
+            alert('To download as ZIP: Save this webpage completely, then zip the saved folder. All file contents are embedded in this page.');
+        }
+
+        function copyProjectInfo() {
+            const info = `Tadka News Platform Export
+Generated: ${new Date().toLocaleString()}
+Total Files: ${projectFiles.length}
+Technology: FastAPI + React 19 + SQLite
+Repository: Ready for GitHub upload`;
+            copyToClipboard(info, event.target);
+        }
+
+        // This will be populated with actual file data
+        async function loadFileContents() {
+            // The files will be loaded by the Python script
+            document.getElementById('totalFiles').textContent = projectFiles.length;
+            document.getElementById('pythonFiles').textContent = pythonCount;
+            document.getElementById('jsFiles').textContent = jsCount;
+            document.getElementById('totalLines').textContent = totalLines;
+        }
+
+        // Load when page is ready
+        document.addEventListener('DOMContentLoaded', loadFileContents);
+    </script>
+</body>
+</html>

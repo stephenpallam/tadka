@@ -1,0 +1,75 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #0f0f10;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Drag and Drop Styles */
+.drag-drop-zone {
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.drag-drop-zone:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.dragging {
+    opacity: 0.5;
+    transform: rotate(2deg);
+}
+
+.drag-drop-zone::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px dashed transparent;
+    border-radius: 4px;
+    pointer-events: none;
+    transition: border-color 0.2s ease;
+}
+
+.drag-drop-zone:hover::after {
+    border-color: #3b82f6;
+}
+
+/* Custom hover behavior for draggable section controls only */
+.draggable-controls-container:hover .hover-controls {
+    opacity: 1;
+}
