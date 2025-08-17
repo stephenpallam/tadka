@@ -11,7 +11,7 @@ import sys
 import os
 
 # Get backend URL from environment
-BACKEND_URL = "https://indian-cms.preview.emergentagent.com"
+BACKEND_URL = "https://repo-loader-7.preview.emergentagent.com"
 API_BASE = f"{BACKEND_URL}/api"
 
 def test_politics_section_api():
